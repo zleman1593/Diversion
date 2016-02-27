@@ -5,15 +5,9 @@ import addInitialData from './configs/initial_adds.js';
 //Expose methods
 methods();
 
-
+//Add Initial Data for Testing
 //addInitialData();
-//addInitialUser();
 
 //Start Workers
-const {ContentCollectors} = workers()
-
-ContentCollectors.startDailyCreation();
-//Tests
-
-//Add Initial Data for Testing
-//ContentCollectors.getContentFromImgur("cow");
+// const {ContentCollectors} = workers()
+// ContentCollectors.startDailyCreation();

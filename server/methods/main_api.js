@@ -22,7 +22,6 @@ export default function() {
         throw new Meteor.Error('logged-out', 'The user must be logged in to get a feed.');
       }
       const feedCurator = new FeedCurator(Meteor.userId(), Constants().numberOfItemsToDisplay);
-        //const feedCurator = new FeedCurator('avcQxuGFqRpsTrciS',  Constants.numberOfItemsToDisplay);
       return feedCurator.getFeed();
     }
   });

@@ -19,22 +19,22 @@ const Friend = Astro.Class.create({
       default: false
     }
   },
-  // indexes: {
-  //   userAConfirm: {
-  //     fields: {
-  //       userA: 1,
-  //       confirmed: 1
-  //     },
-  //     options: {}
-  //   },
-  //   userAConfirm: {
-  //     fields: {
-  //       userB: 1,
-  //       confirmed: 1
-  //     },
-  //     options: {}
-  //   }
-  // }
+  indexes: {
+    userAConfirm: {
+      fields: {
+        userA: 1,
+        confirmed: 1
+      },
+      options: {}
+    },
+    userAConfirm: {
+      fields: {
+        userB: 1,
+        confirmed: 1
+      },
+      options: {}
+    }
+  }
 });
 
 

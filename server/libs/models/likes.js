@@ -1,17 +1,19 @@
-import {Likes} from '/lib/collections';
+import {
+  Likes
+} from '/lib/collections';
 
- const Like = Astro.Class.create({
+const Like = Astro.Class.create({
   name: 'Like',
   collection: Likes,
   fields: {
     userId: {
       type: String,
-      //index:1
+      index: 1
     },
     contentId: {
       type: String,
     },
-     dateLiked: {
+    dateLiked: {
       type: Date,
     },
     contentCategory: {

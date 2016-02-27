@@ -1,6 +1,8 @@
-import {Shares} from '/lib/collections';
+import {
+  Shares
+} from '/lib/collections';
 
- const Share = Astro.Class.create({
+const Share = Astro.Class.create({
   name: 'Share',
   collection: Shares,
   fields: {
@@ -10,26 +12,26 @@ import {Shares} from '/lib/collections';
     contentId: {
       type: String,
     },
-     dateShared: {
+    dateShared: {
       type: Date,
     },
     toUserId: {
       type: String,
     },
-     used: {
+    used: {
       type: Boolean,
       default: false
     },
   },
-  // indexes: {
-  //   toUserUnused: {
-  //     fields: {
-  //       toUserId: 1,
-  //       used: 1
-  //     },
-  //     options: {}
-  //   }
-  // }
+  indexes: {
+    toUserUnused: {
+      fields: {
+        toUserId: 1,
+        used: 1
+      },
+      options: {}
+    }
+  }
 });
 
 

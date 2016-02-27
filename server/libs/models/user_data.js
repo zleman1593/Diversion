@@ -1,36 +1,31 @@
-import {UserData} from '/lib/collections';
+import {
+  UserData
+} from '/lib/collections';
 
-
-// const Feed = Astro.Class.create({
-//   name: 'Feed',
-//   fields: {
-//     shares: [Object],
-//     personalizedContent: [Object],
-//     nativeAds:[Object],
-//   }
-// });
 
 const UserDataModel = Astro.Class.create({
-  name: 'UserData',
+  name: 'UserDataModel',
   collection: UserData,
   fields: {
-    userId : {
-      type:String,
-      //index:1
+    userId: {
+      type: String,
+      index: 1
     },
-    nextFeed:  {
+    nextFeed: {
       shares: [Object],
       personalizedContent: [Object],
-      nativeAds:[Object],
+      nativeAds: [Object],
     },
-    nextFeedCreated:{
-      type:Date,
+    nextFeedCreated: {
+      type: Date,
       default: new Date()
     },
     nextFeedViewed: Boolean,
-    categories:{
-      type:[String],
-      default: ()=>{[]}
+    categories: {
+      type: [String],
+      default: () => {
+        []
+      }
     }
   }
 });
