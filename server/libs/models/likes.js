@@ -19,6 +19,9 @@ const Like = Astro.Class.create({
     contentCategory: {
       type: String,
     },
+    contentType: {
+      type: String,
+    },
   }
 });
 

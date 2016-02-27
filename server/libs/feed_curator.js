@@ -65,6 +65,8 @@ export default class FeedCurator {
     let today = new Date();
     today.setHours(0, 0, 0, 0);
 
+    // TODO: Improve this based on learned content and type preference data stored in userData document.
+
     // Get content that for each category that was created today.
     userData.categories.forEach((category) => {
       const content = Content.find({

@@ -11,6 +11,11 @@ const UserDataModel = Astro.Class.create({
       type: String,
       index: 1
     },
+    learnedPrefs:{
+      contentTypePrefs:Object,
+      contentCategoryPrefs:Object,
+      adEngagement:Object,
+    },
     nextFeed: {
       shares: [Object],
       personalizedContent: [Object],
