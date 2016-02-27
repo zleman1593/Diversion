@@ -138,8 +138,6 @@ export default function() {
   });
 
 
-
-
   Meteor.methods({
     'share.create' (contentId, {
       toUserIds
@@ -199,82 +197,6 @@ export default function() {
         contentCategory
       });
       like.save();
-    },
-
-    // 'like.delete'(contentId, contentCategory) {
-    //   this.unblock(); // Allow Method to run on new fiber.
-    //   check(contentId, String); // Security checks
-    //   check(contentCategory, String); // Not essential to obtain this server side (Mainly for learning prefs).
-    //
-    //   const userId = Meteor.userId();
-    //   if (!userId) {
-    //     throw new Meteor.Error('logged-out', 'The user must be logged in to like an item.');
-    //   }
-    //
-    //   const like = new Like();
-    //   like.set({
-    //     userId,
-    //     contentId,
-    //     dateLiked: new Date(),
-    //     contentCategory
-    //   });
-    //   like.save();
-    // }
-
-
+    }
   });
 }
-
-
-// Meteor.methods({
-//   'share.create' (contentId, {
-//     toUserIds
-//   }) {
-//     this.unblock(); // Allow Method to run on new fiber.
-//     // Security checks
-//     check(contentId, String);
-//     let usersInGroup = [];
-//     // If a groupID is provided and a single user is not.
-//     if (!!groupId && !toUserId) {
-//       check(groupId, String);
-//       // Obtain group memebers
-//       const group = Group.findOne({
-//         _id: groupId
-//       });
-//       if (!!group) {
-//         usersInGroup = group.members;
-//       } else {
-//         throw new Meteor.Error('Invalid Group ID', 'This group does not exist.');
-//       }
-//     } else if (!!toUserId && !groupId ) {
-//       check(toUserId, String);
-//       usersInGroup.push(toUserId);
-//     } else {
-//       throw new Meteor.Error('Invalid recipient', 'No recipient exists.');
-//     }
-//
-//     const userId = Meteor.userId();
-//
-//     if (!userId) {
-//       throw new Meteor.Error('logged-out', 'The user must be logged in to share content.');
-//     }
-//
-//     const dateShared = new Date();
-//     // TODO: Merge inserts into one efficient mongo operation
-//     // TODO: Share is still create even if a user with that ID does not exist
-//     for (userIdOfMember of usersInGroup) {
-//       // New share is marked as unused
-//       const used = false;
-//       const share = new Share();
-//       share.set({
-//         contentId,
-//         groupId,
-//         toUserId: userIdOfMember,
-//         dateShared,
-//         used,
-//         userId
-//       });
-//       share.save();
-//     }
-//   }
-// });
